@@ -28,7 +28,11 @@ class EnsureStringListener implements EventSubscriberInterface
         $form = $event->getForm();
         $data = $event->getData();
         
-        if (!is_string($data) && CommonUtil::isTypeOf($form, $this->formTypes)) {
+        if (
+            !is_string($data) &&
+            !$form->getConfig()->getCompound() &&
+            CommonUtil::isTypeOf($form, $this->formTypes)
+        ) {
             $event->setData($this->defaultValue);
         }
     }

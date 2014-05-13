@@ -2,7 +2,7 @@
 
 namespace Telesto\VendorExt\Symfony\Form\EnsureString\EventListener;
 
-use Telesto\VendorExt\Symfony\Form\EnsureString\Util;
+use Telesto\VendorExt\Symfony\Form\Utils\CommonUtil;
 
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormEvent;
@@ -28,7 +28,7 @@ class EnsureStringListener implements EventSubscriberInterface
         $form = $event->getForm();
         $data = $event->getData();
         
-        if (!is_string($data) && Util::isTypeOf($form, $this->formTypes)) {
+        if (!is_string($data) && CommonUtil::isTypeOf($form, $this->formTypes)) {
             $event->setData($this->defaultValue);
         }
     }

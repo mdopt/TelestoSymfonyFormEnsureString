@@ -1,5 +1,5 @@
 {
-    "name": "telesto/symfony-form-ensurestring",
+    "name": "telesto/symfony-form-ensure-string",
     "description": "Symfony form type extension which substitutes non-string data with default value for requested form types.",
     "keywords": ["symfony", "form", "forms"],
     "type" : "library",
